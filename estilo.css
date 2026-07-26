@@ -1,0 +1,216 @@
+/* Portal Tchê TV — folha de estilo única, mobile-first */
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,400&family=Lato:wght@300;400;700&display=swap');
+
+:root{
+  --ink:#16181c;
+  --muted:#70757b;
+  --line:#e3e5e8;
+  --hair:#f0f1f3;
+  --red:#be1c26;
+  --red-dark:#96161e;
+  --green:#1f7a4d;
+  --bg:#ffffff;
+  --soft:#faf9f8;
+  --max: 760px;
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent; }
+html{ scroll-behavior:smooth; }
+body{
+  font-family:"Lato",system-ui,sans-serif;
+  color:var(--ink); background:var(--bg);
+  font-size:16px; line-height:1.6; font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:76px;              /* espaço da barra fixa */
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; }
+
+.wrap{ max-width:var(--max); margin:0 auto; padding:0 20px; }
+
+/* ---------- topo ---------- */
+.topbar{
+  position:sticky; top:0; z-index:40; background:rgba(255,255,255,.96);
+  backdrop-filter:saturate(1.6) blur(8px); border-bottom:1px solid var(--line);
+}
+.topbar .in{ max-width:var(--max); margin:0 auto; padding:10px 20px;
+  display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.topbar img{ height:34px; width:auto; }
+.nav{ display:flex; gap:6px; }
+.nav a{
+  font-size:12px; letter-spacing:.06em; text-decoration:none; font-weight:700;
+  padding:7px 11px; border:1px solid var(--line); border-radius:999px; color:var(--muted);
+  white-space:nowrap;
+}
+.nav a.on{ background:var(--ink); border-color:var(--ink); color:#fff; }
+
+/* ---------- tipografia ---------- */
+.kicker{ font-size:11px; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--red); font-weight:700; }
+h1{ font-family:"Lora",Georgia,serif; font-weight:400; font-size:32px;
+  line-height:1.14; letter-spacing:-.01em; margin-top:12px; }
+h1 em{ font-style:italic; color:var(--red); }
+h2{ font-family:"Lora",Georgia,serif; font-weight:400; font-size:24px;
+  line-height:1.18; }
+.lede{ margin-top:14px; font-size:15px; line-height:1.62; color:#44484e; font-weight:300; }
+.lede b{ font-weight:700; color:var(--ink); }
+.secttl{ font-size:11px; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--muted); font-weight:700; }
+.sechead{ display:flex; align-items:baseline; justify-content:space-between; gap:12px;
+  border-bottom:1px solid var(--line); padding-bottom:9px; }
+.sechead .sub{ font-size:12px; color:var(--muted); font-weight:300; text-align:right; }
+
+section{ padding:34px 0 0; }
+.hero{ padding-top:30px; }
+
+/* ---------- números da rede ---------- */
+.stats{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:20px; }
+.stat{ background:var(--soft); border-radius:12px; padding:14px 12px; text-align:center; }
+.stat .n{ font-family:"Lora",Georgia,serif; font-size:26px; line-height:1; }
+.stat .l{ font-size:11px; color:var(--muted); margin-top:6px; font-weight:300; line-height:1.35; }
+
+/* ---------- pontos ---------- */
+.pontos{ margin-top:16px; }
+.ponto{ border:1px solid var(--line); border-radius:14px; padding:16px 16px 14px; margin-top:12px; }
+.ponto .top{ display:flex; align-items:flex-start; gap:12px; }
+.ponto .num{ width:26px; height:26px; flex:none; border-radius:50%; background:var(--red);
+  color:#fff; font-size:12px; font-weight:700; display:flex; align-items:center;
+  justify-content:center; margin-top:2px; }
+.ponto .nm{ font-family:"Lora",Georgia,serif; font-size:20px; line-height:1.15; }
+.ponto .cat{ font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--muted); font-weight:700; margin-top:4px; }
+.ponto .txt{ font-size:14px; line-height:1.55; color:#44484e; font-weight:300; margin-top:10px; }
+.ponto .tags{ display:flex; flex-wrap:wrap; gap:6px; margin-top:12px; }
+.tag{ font-size:11px; font-weight:700; letter-spacing:.04em; padding:4px 10px;
+  border-radius:999px; border:1px solid var(--line); color:var(--muted); }
+.tag.on{ background:#fbf4f4; border-color:#eccdd0; color:var(--red); }
+.tag.ent{ background:#f1f7f3; border-color:#cfe3d8; color:var(--green); }
+
+/* ---------- mapa ---------- */
+.mapa{ margin-top:16px; border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+.mapa img{ width:100%; }
+.mapa .cp{ font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--muted); text-align:center; padding:10px; border-top:1px solid var(--line); }
+
+/* ---------- gráficos ---------- */
+.chartbox{ margin-top:18px; }
+.legend{ display:flex; flex-wrap:wrap; gap:12px; margin-bottom:10px; }
+.legend span{ display:flex; align-items:center; gap:6px; font-size:12px; color:var(--muted); }
+.legend i{ width:16px; height:3px; border-radius:2px; display:block; }
+.canvaswrap{ position:relative; width:100%; height:230px; }
+.chartnote{ font-size:11px; color:var(--muted); margin-top:10px; line-height:1.5; font-weight:300; }
+
+.entregas{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:18px; }
+.entrega{ border-top:2px solid var(--line); padding-top:10px; }
+.entrega .t{ font-size:13px; font-weight:700; }
+.entrega .t b{ color:var(--red); }
+.entrega .s{ font-size:12px; line-height:1.45; color:var(--muted); font-weight:300; margin-top:4px; }
+
+/* ---------- combos ---------- */
+.combo{ border:1px solid var(--line); border-radius:14px; padding:16px; margin-top:12px; }
+.combo .nm{ font-family:"Lora",Georgia,serif; font-size:20px; line-height:1.15; }
+.combo .para{ font-size:12px; color:var(--muted); font-weight:300; margin-top:5px; line-height:1.45; }
+.combo ul{ list-style:none; margin-top:12px; padding-top:12px; border-top:1px solid var(--hair); }
+.combo li{ font-size:13px; padding:3px 0; display:flex; gap:8px; }
+.combo li b{ color:var(--red); font-weight:700; }
+.combo .pr{ margin-top:12px; padding-top:12px; border-top:1px solid var(--hair);
+  display:flex; align-items:flex-end; justify-content:space-between; gap:12px; }
+.combo .anc{ font-size:12px; color:var(--muted); font-weight:300; }
+.combo .anc s{ font-weight:700; }
+.combo .now{ font-family:"Lora",Georgia,serif; font-size:28px; color:var(--red); line-height:1.05; }
+.combo .now u{ font-family:"Lato",sans-serif; font-size:12px; color:var(--muted); text-decoration:none; }
+.combo .eco{ text-align:right; font-size:12px; color:var(--green); font-weight:700; line-height:1.35; }
+.combo .eco span{ display:block; color:var(--muted); font-weight:300; margin-top:3px; }
+.combo .btn{ margin-top:14px; }
+
+/* ---------- botões ---------- */
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  width:100%; padding:13px 18px; border-radius:999px; border:1px solid var(--ink);
+  background:transparent; color:var(--ink); font-family:"Lato",sans-serif;
+  font-size:14px; font-weight:700; cursor:pointer; text-decoration:none;
+  transition:background .15s, color .15s, border-color .15s; }
+.btn:active{ transform:scale(.99); }
+.btn.pri{ background:var(--red); border-color:var(--red); color:#fff; }
+.btn.pri:hover{ background:var(--red-dark); border-color:var(--red-dark); }
+.btn.ghost{ border-color:var(--line); color:var(--muted); }
+
+/* ---------- simulador ---------- */
+.sim{ border:1px solid var(--line); border-radius:16px; padding:16px; margin-top:16px; }
+.sim .grp + .grp{ margin-top:16px; padding-top:16px; border-top:1px solid var(--hair); }
+.sim .grp .h{ font-size:11px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--muted); font-weight:700; margin-bottom:10px; }
+
+.chips{ display:flex; flex-wrap:wrap; gap:8px; }
+.chip{ flex:0 0 auto; -webkit-appearance:none; appearance:none; font-family:"Lato",sans-serif; font-size:13px; font-weight:700; padding:8px 14px; border-radius:999px;
+  border:1px solid var(--line); background:#fff; color:var(--muted); cursor:pointer; }
+.chip.on{ background:var(--ink); border-color:var(--ink); color:#fff; }
+
+.telalist{ list-style:none; }
+.telaitem{ user-select:none; display:flex; align-items:center; gap:12px; padding:11px 0;
+  border-bottom:1px solid var(--hair); cursor:pointer; }
+.telaitem:last-child{ border-bottom:none; }
+.check{ width:22px; height:22px; flex:none; border-radius:6px; border:1.5px solid #c4c8cd;
+  display:flex; align-items:center; justify-content:center; background:#fff;
+  transition:background .12s, border-color .12s; }
+.check svg{ width:13px; height:13px; opacity:0; }
+.telaitem.on .check{ background:var(--red); border-color:var(--red); }
+.telaitem.on .check svg{ opacity:1; }
+.telaitem .info{ flex:1; min-width:0; }
+.telaitem .info .a{ font-size:14px; font-weight:700; line-height:1.25; }
+.telaitem .info .b{ font-size:12px; color:var(--muted); font-weight:300; margin-top:2px; }
+.telaitem .val{ font-family:"Lora",Georgia,serif; font-size:15px; white-space:nowrap; }
+
+.resumo{ position:relative; margin-top:18px; border-radius:14px;
+  background:var(--soft); padding:16px; }
+.resumo .qtd{ font-size:12px; color:var(--muted); font-weight:300; }
+.resumo .linha{ display:flex; align-items:baseline; justify-content:space-between;
+  padding:7px 0; border-bottom:1px solid #eceae7; font-size:13px; }
+.resumo .linha:last-of-type{ border-bottom:none; }
+.resumo .linha .k{ color:var(--muted); font-weight:300; }
+.resumo .linha .v{ font-family:"Lora",Georgia,serif; font-size:16px; }
+.resumo .linha.hi .k{ color:var(--ink); font-weight:700; }
+.resumo .linha.hi .v{ color:var(--red); font-size:24px; }
+.resumo .eco{ margin-top:10px; font-size:12px; color:var(--green); font-weight:700; }
+.resumo .dia{ font-size:12px; color:var(--muted); font-weight:300; margin-top:3px; }
+.resumo .vazio{ font-size:13px; color:var(--muted); font-weight:300; text-align:center; padding:14px 0; }
+
+/* ---------- barra fixa ---------- */
+.bar{ position:fixed; left:0; right:0; bottom:0; z-index:50;
+  background:rgba(255,255,255,.97); backdrop-filter:blur(8px);
+  border-top:1px solid var(--line); padding:10px 20px calc(10px + env(safe-area-inset-bottom)); }
+.bar .in{ max-width:var(--max); margin:0 auto; display:flex; align-items:center; gap:12px; }
+.bar .val{ flex:1; min-width:0; }
+.bar .val .k{ font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--muted); font-weight:700; }
+.bar .val .n{ font-family:"Lora",Georgia,serif; font-size:20px; line-height:1.1; margin-top:1px; }
+.bar .val .n u{ font-family:"Lato",sans-serif; font-size:11px; color:var(--muted); text-decoration:none; }
+.bar .btn{ width:auto; flex:none; padding:12px 20px; }
+
+/* ---------- rodapé ---------- */
+footer{ margin-top:40px; border-top:1px solid var(--line); padding:22px 0 30px; }
+footer .brand{ font-family:"Lora",Georgia,serif; font-size:17px; }
+footer .m{ font-size:12px; color:var(--muted); font-weight:300; line-height:1.7; margin-top:8px; }
+footer .m b{ color:var(--ink); font-weight:700; }
+
+.notes{ font-size:11px; line-height:1.55; color:var(--muted); font-weight:300;
+  border-top:1px solid var(--line); padding-top:14px; margin-top:30px; }
+.notes b{ color:var(--ink); font-weight:700; letter-spacing:.1em;
+  text-transform:uppercase; font-size:10px; }
+
+/* ---------- desktop ---------- */
+@media (min-width:720px){
+  body{ padding-bottom:84px; }
+  h1{ font-size:42px; }
+  h2{ font-size:28px; }
+  .lede{ font-size:16px; }
+  section{ padding-top:48px; }
+  .hero{ padding-top:44px; }
+  .pontos{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .ponto{ margin-top:0; }
+  .entregas{ grid-template-columns:repeat(4,1fr); }
+  .canvaswrap{ height:290px; }
+  .combos{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .combo{ margin-top:0; }
+  .topbar img{ height:40px; }
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Planos e valores · Portal Tchê TV</title>
+<meta name="description" content="Combos por segmento e simulador de orçamento da rede Portal Tchê TV em Getúlio Vargas/RS.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Planos e valores · Portal Tchê TV">
+<meta property="og:description" content="Monte seu plano: escolha as telas e veja o valor na hora.">
+<link rel="icon" href="logo.png">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="in">
+    <img src="logo.png" alt="Portal Tchê TV">
+    <nav class="nav">
+      <a href="index.html">A rede</a>
+      <a href="planos.html" class="on">Planos</a>
+    </nav>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="kicker">Planos 2026</div>
+    <h1>Monte o seu plano<br>em <em>um minuto</em>.</h1>
+    <p class="lede">
+      Escolha um combo pronto do seu segmento ou marque tela por tela.
+      O valor aparece na hora, nos três prazos. <b>Quanto maior o prazo, menor o valor por tela.</b>
+    </p>
+  </section>
+
+  <section>
+    <div class="sechead">
+      <div class="secttl">Tabela por tela</div>
+      <div class="sub">Valores por mês</div>
+    </div>
+    <div class="sim" style="margin-top:14px;">
+      <table style="width:100%;border-collapse:collapse" id="tabtipos"></table>
+    </div>
+  </section>
+
+  <section id="simulador">
+    <div class="sechead">
+      <div class="secttl">Simulador</div>
+      <div class="sub">Marque as telas que quiser</div>
+    </div>
+
+    <div class="sim">
+      <div class="grp">
+        <div class="h">Prazo do plano</div>
+        <div class="chips">
+          <button class="chip" data-plano="mensal">Mensal</button>
+          <button class="chip" data-plano="semestral">Semestral</button>
+          <button class="chip on" data-plano="anual">Anual · 12 meses</button>
+        </div>
+      </div>
+
+      <div class="grp">
+        <div class="h">Telas da rede</div>
+        <ul class="telalist" id="telalist"></ul>
+        <button class="btn ghost" id="btn-tudo" style="margin-top:12px">Marcar / desmarcar todas</button>
+      </div>
+
+      <div class="resumo" id="resumo"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sechead">
+      <div class="secttl">Combos por segmento</div>
+      <div class="sub">Valores no plano de 12 meses</div>
+    </div>
+    <p class="lede" style="margin-bottom:4px;">
+      Cada combo junta os pontos cujo público mais se aproxima do seu negócio.
+      Toque em um deles para carregar no simulador.
+    </p>
+    <div class="combos" id="combos"></div>
+  </section>
+
+  <section>
+    <div class="sechead">
+      <div class="secttl">Condições</div>
+      <div class="sub">Vale para qualquer plano</div>
+    </div>
+    <div class="entregas" style="margin-top:16px;">
+      <div class="entrega">
+        <div class="t">Preço travado por 12 meses</div>
+        <div class="s">O valor contratado não sofre reajuste durante a vigência do plano.</div>
+      </div>
+      <div class="entrega">
+        <div class="t">Criação inclusa</div>
+        <div class="s">Anúncio em motion criado pela nossa equipe, sem custo no plano anual.</div>
+      </div>
+      <div class="entrega">
+        <div class="t">01 atualização de criativo</div>
+        <div class="s">Inclusa no plano anual. Trocas extras podem ser combinadas à parte.</div>
+      </div>
+      <div class="entrega">
+        <div class="t">Exclusividade de categoria</div>
+        <div class="s">Quer ser o único do seu segmento? Consulte disponibilidade e condição.</div>
+      </div>
+    </div>
+
+    <p class="notes">
+      <b>Valores</b> Por tela, por mês, sem taxa de instalação. Tabela 2026, sujeita a reajuste anual.
+      Rede completa = as 7 telas dos 6 pontos. &nbsp;
+      <b>Disponibilidade</b> O tempo de exibição de cada tela é limitado. A contratação está sujeita a
+      vaga disponível no ponto no momento do fechamento.
+    </p>
+  </section>
+
+  <footer>
+    <div class="brand">Portal Tchê · desde 2017</div>
+    <div class="m" id="rodape"></div>
+  </footer>
+
+</main>
+
+<div class="bar">
+  <div class="in">
+    <div class="val">
+      <div class="k">Seu plano</div>
+      <div class="n" id="bar-val">—</div>
+    </div>
+    <a class="btn pri" id="bar-wa" href="#">Enviar no WhatsApp</a>
+  </div>
+</div>
+
+<script src="rede.js"></script>
+<script src="app.js"></script>
+<script>
+  document.getElementById("tabtipos").innerHTML =
+    '<tr style="border-bottom:1px solid var(--line)">'
+    + '<th style="text-align:left;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding-bottom:8px">Tela</th>'
+    + PLANOS.map(p => '<th style="text-align:right;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:'
+        + (p.destaque ? 'var(--red)' : 'var(--muted)') + ';padding:0 0 8px 10px">' + p.nome + '</th>').join('')
+    + '</tr>'
+    + Object.entries(TIPOS).map(([k, t]) =>
+        '<tr style="border-bottom:1px solid var(--hair)">'
+        + '<td style="padding:10px 0"><div style="font-size:14px;font-weight:700">' + t.nome + '</div>'
+        + '<div style="font-size:11px;color:var(--muted);font-weight:300">' + t.desc + '</div></td>'
+        + PLANOS.map(p => '<td style="text-align:right;padding:10px 0 10px 10px;font-family:Lora,Georgia,serif;font-size:15px;'
+            + (p.destaque ? 'color:var(--red)' : 'color:var(--muted)') + '">' + brl(t[p.id]) + '</td>').join('')
+        + '</tr>').join('');
+
+  montarSimulador();
+  montarCombos();
+  montarRodape();
+</script>
+
+</body>
+</html>

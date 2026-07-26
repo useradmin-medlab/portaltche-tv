@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portal Tchê TV · Mídia Indoor em Getúlio Vargas</title>
+<meta name="description" content="Rede de telas em 6 pontos de grande fluxo no centro de Getúlio Vargas/RS. Veja os pontos, o índice de visibilidade e monte seu plano.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Portal Tchê TV · Mídia Indoor">
+<meta property="og:description" content="Sua marca onde o povo realmente está. 7 telas em 6 pontos do centro de Getúlio Vargas.">
+<meta property="og:type" content="website">
+<link rel="icon" href="logo.png">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="in">
+    <img src="logo.png" alt="Portal Tchê TV">
+    <nav class="nav">
+      <a href="index.html" class="on">A rede</a>
+      <a href="planos.html">Planos</a>
+    </nav>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="kicker">Mídia indoor · Getúlio Vargas/RS</div>
+    <h1>Sua marca onde<br>o povo <em>realmente</em> está.</h1>
+    <p class="lede">
+      O Portal Tchê TV é uma rede de televisores instalados em locais de grande fluxo de pessoas,
+      exibindo ofertas, marcas e serviços de forma automática e contínua. Enquanto o público espera,
+      circula ou consome, sua marca está ali: <b>visível, ativa e presente</b>.
+    </p>
+
+    <div class="stats">
+      <div class="stat"><div class="n">7</div><div class="l">telas</div></div>
+      <div class="stat"><div class="n">6</div><div class="l">pontos no centro</div></div>
+      <div class="stat"><div class="n" id="st-dia">R$ 19</div><div class="l">por dia na rede toda</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sechead">
+      <div class="secttl">Onde sua marca aparece</div>
+      <div class="sub">6 pontos · 7 telas</div>
+    </div>
+    <div class="pontos" id="pontos"></div>
+
+    <div class="mapa">
+      <img src="mapa.jpg" alt="Mapa dos pontos no centro de Getúlio Vargas">
+      <div class="cp">Centro · Getúlio Vargas/RS</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sechead">
+      <div class="secttl">Índice de Visibilidade</div>
+      <div class="sub">Quando cada tela é mais vista</div>
+    </div>
+
+    <h2 style="margin-top:22px;">Não basta estar na tela.<br>É preciso estar na <em style="font-style:italic;color:var(--red)">hora certa</em>.</h2>
+    <p class="lede">
+      Cada ponto tem seu próprio ritmo ao longo do dia. O índice mostra <b>quando</b> cada tela
+      é mais vista — de 0 a 100, sempre em relação ao pico daquele ponto.
+    </p>
+
+    <div class="chartbox">
+      <div class="secttl" style="margin-bottom:10px;">A rede tem três ritmos diferentes</div>
+      <div class="legend" id="leg-rede"></div>
+      <div class="canvaswrap">
+        <canvas id="ch-rede" role="img" aria-label="Curva de visibilidade por hora da vitrine Men Place, da Móbilis Academia e da La Bodega">
+          A vitrine pica às 11h e 17h, a academia às 18h e o restaurante às 20h.
+        </canvas>
+      </div>
+    </div>
+
+    <div class="chartbox">
+      <div class="secttl" style="margin-bottom:10px;">Lotérica Pé Quente · a tela mais constante</div>
+      <div class="legend" id="leg-lot"></div>
+      <div class="canvaswrap">
+        <canvas id="ch-lot" role="img" aria-label="Curva de visibilidade da Lotérica Pé Quente em dia útil e fim de semana">
+          Em dia útil: 63 por cento de manhã e 75 por cento das 15h às 17h.
+        </canvas>
+      </div>
+    </div>
+
+    <div class="entregas">
+      <div class="entrega">
+        <div class="t">A vitrine entrega <b>volume</b></div>
+        <div class="s">Dois picos por dia, 11h e 17h, no ritmo da rua.</div>
+      </div>
+      <div class="entrega">
+        <div class="t">A academia entrega <b>frequência</b></div>
+        <div class="s">A mesma pessoa vê sua marca 3 a 5 vezes por semana.</div>
+      </div>
+      <div class="entrega">
+        <div class="t">O restaurante entrega <b>atenção</b></div>
+        <div class="s">Público sentado. Aqui a mensagem é lida, não só vista.</div>
+      </div>
+      <div class="entrega">
+        <div class="t">A lotérica entrega <b>constância</b></div>
+        <div class="s">Nunca abaixo de 45% entre 10h e 17h.</div>
+      </div>
+    </div>
+
+    <p class="chartnote">
+      Índice relativo: 100% é o horário de maior visibilidade daquele ponto, não um número absoluto de
+      pessoas — por isso os valores não se comparam entre pontos diferentes. Pontos com dados públicos de
+      movimento usam essa base; os demais são estimados por categoria de negócio, horário declarado e
+      verificação presencial da tela. Revisado a cada semestre.
+    </p>
+  </section>
+
+  <section>
+    <a class="btn pri" href="planos.html">Ver planos e montar o meu →</a>
+  </section>
+
+  <footer>
+    <div class="brand">Portal Tchê · desde 2017</div>
+    <div class="m" id="rodape"></div>
+  </footer>
+
+</main>
+
+<div class="bar">
+  <div class="in">
+    <div class="val">
+      <div class="k">Rede completa · 12 meses</div>
+      <div class="n" id="bar-val">R$ 579 <u>/mês</u></div>
+    </div>
+    <a class="btn pri" id="bar-wa" href="#">Falar no WhatsApp</a>
+  </div>
+</div>
+
+<script src="rede.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="app.js"></script>
+<script>
+  montarPontos();
+  montarGrafico("ch-rede", "leg-rede", IVP.rede, 108);
+  montarGrafico("ch-lot", "leg-lot", IVP.loterica, 90);
+  const rede = calcular(TODAS_TELAS.map(t => t.id));
+  document.getElementById("st-dia").textContent = brl(Math.round(rede.porDia));
+  document.getElementById("bar-val").innerHTML = brl(rede.anual) + ' <u>/mês</u>';
+  document.getElementById("bar-wa").href = linkWhats(
+    "Olá! Vi o site do Portal Tchê TV e quero saber mais sobre anunciar na rede."
+  );
+  montarRodape();
+</script>
+
+</body>
+</html>

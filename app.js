@@ -19,7 +19,7 @@ function montarPontos() {
   const alvo = document.getElementById("pontos");
   if (!alvo) return;
   alvo.innerHTML = PONTOS.map((p, i) => {
-    const telas = p.telas.map(t => '<span class="tag on">' + TIPOS[t.tipo].curto + '</span>').join("");
+    const telas = p.telas.map(t => '<span class="tag on">' + (t.rotulo || TIPOS[t.tipo].curto) + '</span>').join("");
     return `
       <article class="ponto">
         <div class="top">
@@ -157,7 +157,7 @@ function montarSimulador() {
         </span>
         <span class="info">
           <span class="a">${p.nome}</span>
-          <span class="b">${tipo.curto}</span>
+          <span class="b">${t.rotulo || tipo.curto}</span>
         </span>
         <span class="val" data-val="${t.id}"></span>
       </li>`;

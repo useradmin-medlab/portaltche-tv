@@ -20,7 +20,7 @@ const CONTATO = {
 ------------------------------------------------------------------- */
 const TIPOS = {
   i32: { nome: 'Tela interna 32"',  curto: 'interna 32"',  desc: "Ambiente interno do estabelecimento", mensal: 70,  semestral: 63,  anual: 55  },
-  v50: { nome: 'Tela vitrine 50"',  curto: 'vitrine 50"',  desc: "Voltada para a rua, visível da calçada", mensal: 120, semestral: 108, anual: 95  },
+  v50: { nome: 'Tela vitrine 50" e 55"', curto: 'vitrine 50"', desc: "Voltada para a rua, visível da calçada", mensal: 120, semestral: 108, anual: 95  },
   v65: { nome: 'Tela vitrine 65"',  curto: 'vitrine 65"',  desc: "Maior formato, máxima visibilidade",     mensal: 219, semestral: 197, anual: 169 }
 };
 
@@ -86,7 +86,7 @@ const PONTOS = [
     destaque: "Público de decisão de obra e reforma",
     publico: "Vitrine na R. Sen. Salgado Filho. Público de classe A/B em momento de projeto.",
     entrega: "volume",
-    telas: [ { id: "scarquitetura-v50", tipo: "v50" } ]
+    telas: [ { id: "scarquitetura-v50", tipo: "v50", rotulo: 'vitrine 55"' } ]
   }
 ];
 
@@ -155,7 +155,8 @@ const IVP = {
    Funções de cálculo — não precisa mexer
 ------------------------------------------------------------------- */
 const TODAS_TELAS = PONTOS.flatMap(p =>
-  p.telas.map(t => ({ ...t, pontoId: p.id, pontoNome: p.nome, ...TIPOS[t.tipo] }))
+  p.telas.map(t => ({ ...t, pontoId: p.id, pontoNome: p.nome, ...TIPOS[t.tipo],
+                      curto: t.rotulo || TIPOS[t.tipo].curto }))
 );
 
 function telaPorId(id) { return TODAS_TELAS.find(t => t.id === id); }

@@ -94,6 +94,14 @@ No bloco `PONTOS`, copie um ponto existente e ajuste. Cada tela precisa de um `i
 }
 ```
 
+Se uma tela tem tamanho diferente mas o mesmo preço da faixa, use `rotulo` na tela
+para sobrescrever só o texto exibido — o preço continua o da faixa.
+Ex.: a SC Arquitetura é 55" e usa a faixa `v50`:
+
+```js
+telas: [ { id: "scarquitetura-v50", tipo: "v50", rotulo: 'vitrine 55"' } ]
+```
+
 ### Criar ou mudar um combo
 
 No bloco `COMBOS`, liste os `id` das telas:

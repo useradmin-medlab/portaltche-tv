@@ -44,6 +44,14 @@
     </div>
   </section>
 
+  <section>
+    <div class="sechead">
+      <div class="secttl">Planos rede completa</div>
+      <div class="sub">7 telas · 6 pontos · valores por mês</div>
+    </div>
+    <div class="planos3" id="planos3"></div>
+  </section>
+
   <section id="simulador">
     <div class="sechead">
       <div class="secttl">Simulador</div>
@@ -147,6 +155,51 @@
         + PLANOS.map(p => '<td style="text-align:right;padding:10px 0 10px 10px;font-family:Lora,Georgia,serif;font-size:15px;'
             + (p.destaque ? 'color:var(--red)' : 'color:var(--muted)') + '">' + brl(t[p.id]) + '</td>').join('')
         + '</tr>').join('');
+
+  (function(){
+    const r = calcular(TODAS_TELAS.map(t => t.id));
+    const zap = txt => linkWhats(txt);
+    document.getElementById("planos3").innerHTML = `
+      <article class="pl">
+        <div class="nm">Mensal</div>
+        <div class="sb">Sem contrato · renovação livre</div>
+        <div class="anc">&nbsp;</div>
+        <div class="now">${brl(r.mensal)} <u>/mês</u></div>
+        <ul>
+          <li><span class="ck">✓</span><span>As <b>7 telas</b> da rede, nos 6 pontos</span></li>
+          <li><span class="ck">✓</span><span>Exibição automática e contínua</span></li>
+          <li><span class="ck">✓</span><span>Cancele quando quiser</span></li>
+        </ul>
+        <a class="btn zap" href="${zap('Olá! Quero contratar o plano Mensal da rede completa (' + brl(r.mensal) + '/mês).')}">Quero este plano</a>
+      </article>
+      <article class="pl">
+        <div class="nm">Semestral</div>
+        <div class="sb">6 meses · preço travado</div>
+        <div class="anc">Tabela <s>${brl(r.mensal)}</s></div>
+        <div class="now">${brl(r.semestral)} <u>/mês</u></div>
+        <ul>
+          <li><span class="ck">✓</span><span>As <b>7 telas</b> da rede, nos 6 pontos</span></li>
+          <li><span class="ck">✓</span><span>Preço travado por 6 meses</span></li>
+          <li><span class="ck">✓</span><span>Economia de <b>${brl(r.mensal - r.semestral)} por mês</b></span></li>
+        </ul>
+        <a class="btn zap" href="${zap('Olá! Quero contratar o plano Semestral da rede completa (' + brl(r.semestral) + '/mês).')}">Quero este plano</a>
+      </article>
+      <article class="pl hi">
+        <span class="badge">Mais contratado</span>
+        <div class="nm">Anual</div>
+        <div class="sb">12 meses · melhor valor da tabela</div>
+        <div class="anc">Tabela <s>${brl(r.mensal)}</s></div>
+        <div class="now">${brl(r.anual)} <u>/mês</u></div>
+        <ul>
+          <li><span class="ck">✓</span><span>As <b>7 telas</b> da rede, nos 6 pontos</span></li>
+          <li><span class="ck">✓</span><span>Criação do anúncio em <b>motion</b> inclusa</span></li>
+          <li><span class="ck">✓</span><span>01 atualização de criativo inclusa</span></li>
+          <li><span class="ck">✓</span><span>Preço travado por 12 meses</span></li>
+        </ul>
+        <div class="eco">${brl(r.economiaAno)} de economia no ano</div>
+        <a class="btn zap" href="${zap('Olá! Quero contratar o plano Anual da rede completa (' + brl(r.anual) + '/mês).')}">Quero este plano</a>
+      </article>`;
+  })();
 
   montarSimulador();
   montarCombos();

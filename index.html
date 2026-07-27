@@ -35,10 +35,9 @@
       circula ou consome, sua marca está ali: <b>visível, ativa e presente</b>.
     </p>
 
-    <div class="stats">
+    <div class="stats" style="grid-template-columns:repeat(2,1fr)">
       <div class="stat"><div class="n">7</div><div class="l">telas</div></div>
       <div class="stat"><div class="n">6</div><div class="l">pontos no centro</div></div>
-      <div class="stat"><div class="n" id="st-dia">R$ 19</div><div class="l">por dia na rede toda</div></div>
     </div>
   </section>
 
@@ -143,7 +142,6 @@
   montarGrafico("ch-rede", "leg-rede", IVP.rede, 108);
   montarGrafico("ch-lot", "leg-lot", IVP.loterica, 90);
   const rede = calcular(TODAS_TELAS.map(t => t.id));
-  document.getElementById("st-dia").textContent = brl(Math.round(rede.porDia));
   document.getElementById("bar-val").innerHTML = brl(rede.anual) + ' <u>/mês</u>';
   document.getElementById("bar-wa").href = linkWhats(
     "Olá! Vi o site do Portal Tchê TV e quero saber mais sobre anunciar na rede."

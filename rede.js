@@ -39,7 +39,7 @@ const PONTOS = [
     nome: "Lotérica Pé Quente",
     categoria: "Casa lotérica",
     destaque: "Única casa lotérica da cidade",
-    publico: "Público parado na fila, com tempo e celular na mão. O ponto de maior constância da rede.",
+    publico: "Público parado na fila, com tempo esperando sua hora na fila. O ponto de maior constância da rede.",
     entrega: "constância",
     telas: [ { id: "loterica-i32", tipo: "i32" }, { id: "loterica-v65", tipo: "v65" } ]
   },
